@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services - QodeWorx Technologies</title>
+    <!-- <link rel="stylesheet" href="services.css"> -->
+    <style>
+        * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    line-height: 1.6;
+    color: #e0e0e0;
+    background-color: #0a0a0a;
+}
+
+.navbar {
+    background-color: #0f0f0f;
+    padding: 1rem 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 2px solid #4CAF50;
+    box-shadow: 0 2px 20px rgba(76, 175, 80, 0.3);
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    color: #4CAF50;
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-shadow: 0 0 10px rgba(76, 175, 80, 0.5);
+    border: 2px solid #4CAF50;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+.nav-link {
+    color: #e0e0e0;
+    text-decoration: none;
+    transition: all 0.3s;
+    padding: 0.5rem 1rem;
+    border: 1px solid #2a2a2a;
+    border-radius: 5px;
+}
+
+.nav-link:hover {
+    color: #4CAF50;
+    border-color: #4CAF50;
+    box-shadow: 0 0 10px rgba(76, 175, 80, 0.3);
+}
+
+.nav-link.active {
+    color: #0a0a0a;
+    background-color: #4CAF50;
+    border: 2px solid #4CAF50;
+}
+
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    padding: 0.5rem;
+    border: 2px solid #4CAF50;
+    border-radius: 5px;
+}
+
+.hamburger span {
+    width: 25px;
+    height: 3px;
+    background-color: #4CAF50;
+    margin: 3px 0;
+    transition: 0.3s;
+}
+
+.services-hero {
+    background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+    color: #e0e0e0;
+    padding: 6rem 2rem 3rem;
+    text-align: center;
+    margin-top: 60px;
+    border-bottom: 2px solid #4CAF50;
+}
+
+.services-hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    text-shadow: 0 0 20px rgba(76, 175, 80, 0.5);
+    -webkit-text-stroke: 1px rgba(76, 175, 80, 0.3);
+    display: inline-block;
+    padding: 0.5rem 2rem;
+    border: 2px solid rgba(76, 175, 80, 0.5);
+    border-radius: 10px;
+}
+
+.services-hero p {
+    font-size: 1.2rem;
+    opacity: 0.9;
+    color: #b0b0b0;
+    display: inline-block;
+    padding: 0.5rem 1.5rem;
+    border: 1px solid rgba(76, 175, 80, 0.3);
+    border-radius: 20px;
+}
+
+.services-content {
+    padding: 4rem 2rem;
+    background-color: #0f0f0f;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+    margin-bottom: 4rem;
+}
+
+.service-card {
+    background: #1a1a1a;
+    padding: 2rem;
+    border-radius: 10px;
+    border: 2px solid #2a2a2a;
+    transition: all 0.3s;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.service-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, transparent, rgba(76, 175, 80, 0.1), transparent);
+    transform: translateX(-100%);
+    transition: transform 0.6s;
+}
+
+.service-card:hover::before {
+    transform: translateX(100%);
+}
+
+.service-card:hover {
+    transform: translateY(-10px);
+    border-color: #4CAF50;
+    box-shadow: 0 10px 30px rgba(76, 175, 80, 0.3);
+}
+
+.service-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    display: inline-block;
+    padding: 1.5rem;
+    border: 3px solid #4CAF50;
+    border-radius: 50%;
+    background-color: rgba(76, 175, 80, 0.1);
+    box-shadow: 
+        0 0 20px rgba(76, 175, 80, 0.3),
+        inset 0 0 20px rgba(76, 175, 80, 0.1);
+    position: relative;
+}
+
+.service-icon::after {
+    content: '';
+    position: absolute;
+    inset: -6px;
+    border: 1px solid rgba(76, 175, 80, 0.3);
+    border-radius: 50%;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.5; transform: scale(1.05); }
+}
+
+.service-card h3 {
+    color: #4CAF50;
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+    text-shadow: 0 0 5px rgba(76, 175, 80, 0.3);
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid rgba(76, 175, 80, 0.3);
+}
+
+.service-card p {
+    margin-bottom: 1.5rem;
+    color: #b0b0b0;
+    padding: 0.5rem;
+    border-left: 2px solid rgba(42, 42, 42, 0.5);
+    border-right: 2px solid rgba(42, 42, 42, 0.5);
+}
+
+.service-features {
+    list-style: none;
+    margin-bottom: 1.5rem;
+    text-align: left;
+    border: 1px solid #2a2a2a;
+    border-radius: 5px;
+    padding: 0.5rem;
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+.service-features li {
+    padding: 0.5rem 0.5rem 0.5rem 1.5rem;
+    color: #b0b0b0;
+    position: relative;
+    border-bottom: 1px solid #2a2a2a;
+    transition: all 0.3s;
+}
+
+.service-features li:hover {
+    color: #e0e0e0;
+    background-color: rgba(76, 175, 80, 0.05);
+    border-color: rgba(76, 175, 80, 0.3);
+}
+
+.service-features li:last-child {
+    border-bottom: none;
+}
+
+.service-features li::before {
+    content: "✓";
+    position: absolute;
+    left: 0.5rem;
+    color: #4CAF50;
+    font-weight: bold;
+    text-shadow: 0 0 5px rgba(76, 175, 80, 0.5);
+}
+
+.service-btn {
+    background-color: transparent;
+    color: #4CAF50;
+    border: 2px solid #4CAF50;
+    padding: 0.8rem 2rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s;
+    font-size: 1rem;
+    font-weight: bold;
+    box-shadow: 
+        0 0 10px rgba(76, 175, 80, 0.2),
+        inset 0 0 10px rgba(76, 175, 80, 0.1);
+}
+
+.service-btn:hover {
+    background-color: #4CAF50;
+    color: #0a0a0a;
+    box-shadow: 0 5px 20px rgba(76, 175, 80, 0.4);
+    transform: scale(1.05);
+}
+
+.cta-section {
+    text-align: center;
+    padding: 3rem;
+    background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+    border-radius: 10px;
+    color: #e0e0e0;
+    border: 3px solid #4CAF50;
+    box-shadow: 
+        0 0 30px rgba(76, 175, 80, 0.3),
+        inset 0 0 30px rgba(76, 175, 80, 0.1);
+}
+
+.cta-section h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    text-shadow: 0 0 20px rgba(76, 175, 80, 0.5);
+    -webkit-text-stroke: 1px rgba(76, 175, 80, 0.2);
+}
+
+.cta-section p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    opacity: 0.9;
+    color: #b0b0b0;
+}
+
+.cta-button {
+    background-color: #4CAF50;
+    color: #0a0a0a;
+    border: 3px solid #4CAF50;
+    padding: 1rem 2rem;
+    font-size: 1.1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s;
+    font-weight: bold;
+    box-shadow: 0 0 20px rgba(76, 175, 80, 0.4);
+}
+
+.cta-button:hover {
+    background-color: transparent;
+    color: #4CAF50;
+    transform: scale(1.05);
+    box-shadow: 
+        0 0 30px rgba(76, 175, 80, 0.6),
+        inset 0 0 20px rgba(76, 175, 80, 0.2);
+}
+
+.footer {
+    background-color: #0a0a0a;
+    color: #b0b0b0;
+    text-align: center;
+    padding: 2rem;
+    border-top: 2px solid #4CAF50;
+}
+
+@media (max-width: 768px) {
+    .nav-menu {
+        position: fixed;
+        left: -100%;
+        top: 70px;
+        flex-direction: column;
+        background-color: #0f0f0f;
+        width: 100%;
+        text-align: center;
+        transition: 0.3s;
+        padding: 2rem 0;
+        border-bottom: 2px solid #4CAF50;
+        border-left: 2px solid #4CAF50;
+        border-right: 2px solid #4CAF50;
+    }
+
+    .nav-menu.active {
+        left: 0;
+    }
+
+    .hamburger {
+        display: flex;
+    }
+
+    .services-hero h1 {
+        font-size: 2rem;
+    }
+
+    .services-grid {
+        grid-template-columns: 1fr;
+    }
+}
+    </style>
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">QodeWorx Technologies</div>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="about.html" class="nav-link">About Us</a></li>
+                <li><a href="services.html" class="nav-link active">Services</a></li>
+                <li><a href="contact.html" class="nav-link">Contact Us</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <section class="services-hero">
+        <h1>Our Services</h1><br>
+        <p>Comprehensive Web Development Solutions</p>
+    </section>
+
+    <section class="services-content">
+        <div class="container">
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">🌐</div>
+                    <h3>Custom Website Development</h3>
+                    <p>Tailored websites built from scratch to meet your specific business needs and goals.</p>
+                    <ul class="service-features">
+                        <li>Responsive Design</li>
+                        <li>SEO Optimized</li>
+                        <li>Fast Loading</li>
+                        <li>Cross-browser Compatible</li>
+                    </ul>
+                    <!-- <button class="service-btn">Learn More</button> -->
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">🛒</div>
+                    <h3>E-Commerce Solutions</h3>
+                    <p>Complete online store setup with secure payment integration and inventory management.</p>
+                    <ul class="service-features">
+                        <li>Shopping Cart Integration</li>
+                        <li>Payment Gateway Setup</li>
+                        <li>Product Management</li>
+                        <li>Order Tracking</li>
+                    </ul>
+                    <!-- <button class="service-btn">Learn More</button> -->
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">📱</div>
+                    <h3>Mobile-First Development</h3>
+                    <p>Websites designed with mobile users in mind, ensuring perfect performance on all devices.</p>
+                    <ul class="service-features">
+                        <li>Touch-Optimized Interface</li>
+                        <li>Progressive Web Apps</li>
+                        <!-- <li>Offline Functionality</li> -->
+                        <li>App-like Experience</li>
+                    </ul>
+                    <!-- <button class="service-btn">Learn More</button> -->
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">🔧</div>
+                    <h3>Website Maintenance</h3>
+                    <p>Keep your website running smoothly with regular updates, backups, and technical support.</p>
+                    <ul class="service-features">
+                        <li>Regular Updates</li>
+                        <li>Security Monitoring</li>
+                        <li>Performance Optimization</li>
+                        <li>24/7 Support</li>
+                    </ul>
+                    <!-- <button class="service-btn">Learn More</button> -->
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">🎨</div>
+                    <h3>UI/UX Design</h3>
+                    <p>Beautiful, intuitive designs that enhance user experience and drive engagement.</p>
+                    <ul class="service-features">
+                        <li>User Research</li>
+                        <li>Wireframing</li>
+                        <li>Interactive Prototypes</li>
+                        <li>Usability Testing</li>
+                    </ul>
+                    <!-- <button class="service-btn">Learn More</button> -->
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">⚡</div>
+                    <h3>Performance Optimization</h3>
+                    <p>Speed up your existing website for better user experience and search engine rankings.</p>
+                    <ul class="service-features">
+                        <li>Code Optimization</li>
+                        <li>Image Compression</li>
+                        <li>Caching Setup</li>
+                        <li>CDN Integration</li>
+                    </ul>
+                    <!-- <button class="service-btn">Learn More</button> -->
+                </div>
+            </div>
+
+            <div class="cta-section">
+                <h2>Ready to Start Your Project?</h2>
+                <p>Let's discuss how we can help bring your vision to life</p>
+                <button class="cta-button">Get a Quote</button>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <p>&copy; 2024 QodeWorx Technologies. All rights reserved.</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Mobile menu toggle
+            const hamburger = document.querySelector('.hamburger');
+            const navMenu = document.querySelector('.nav-menu');
+
+            hamburger.addEventListener('click', function () {
+                navMenu.classList.toggle('active');
+
+                const spans = hamburger.querySelectorAll('span');
+                spans[0].style.transform = navMenu.classList.contains('active') ? 'rotate(-45deg) translate(-5px, 6px)' : '';
+                spans[1].style.opacity = navMenu.classList.contains('active') ? '0' : '1';
+                spans[2].style.transform = navMenu.classList.contains('active') ? 'rotate(45deg) translate(-5px, -6px)' : '';
+            });
+
+            // Service card interactions
+            const serviceCards = document.querySelectorAll('.service-card');
+            const serviceBtns = document.querySelectorAll('.service-btn');
+
+            serviceBtns.forEach((btn, index) => {
+                btn.addEventListener('click', function () {
+                    // Create modal effect
+                    const card = serviceCards[index];
+                    const serviceName = card.querySelector('h3').textContent;
+
+                    alert(`Thank you for your interest in ${serviceName}! Please contact us for more information.`);
+
+                    // Alternative: redirect to contact page with service pre-selected
+                    // window.location.href = `contact.html?service=${encodeURIComponent(serviceName)}`;
+                });
+            });
+
+            // CTA button
+            const ctaButton = document.querySelector('.cta-button');
+            ctaButton.addEventListener('click', function () {
+                window.location.href = 'contact.html';
+            });
+
+            // Animate service cards on scroll
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+
+            const observer = new IntersectionObserver(function (entries) {
+                entries.forEach((entry, index) => {
+                    if (entry.isIntersecting) {
+                        setTimeout(() => {
+                            entry.target.style.opacity = '0';
+                            entry.target.style.transform = 'translateY(30px)';
+
+                            setTimeout(() => {
+                                entry.target.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+                                entry.target.style.opacity = '1';
+                                entry.target.style.transform = 'translateY(0)';
+                            }, 50);
+                        }, index * 100);
+
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+
+            serviceCards.forEach(card => {
+                observer.observe(card);
+            });
+        });
+    </script>
+</body>
+
+</html>
