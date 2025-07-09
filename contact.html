@@ -1,447 +1,457 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Us - QodeWorx Technologies</title>
     <!-- <link rel="stylesheet" href="contact.css"> -->
-     <style>
+    <style>
         * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-body {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-    line-height: 1.6;
-    color: #e0e0e0;
-    background-color: #0a0a0a;
-}
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #e0e0e0;
+            background-color: #0a0a0a;
+        }
 
-.navbar {
-    background-color: #0f0f0f;
-    padding: 1rem 0;
-    position: fixed;
-    width: 100%;
-    top: 0;
-    z-index: 1000;
-    border-bottom: 2px solid #4CAF50;
-    box-shadow: 0 2px 20px rgba(76, 175, 80, 0.3);
-}
+        .navbar {
+            background-color: #0f0f0f;
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 2px solid #4CAF50;
+            box-shadow: 0 2px 20px rgba(76, 175, 80, 0.3);
+        }
 
-.nav-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 2rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
 
-.logo {
-    color: #4CAF50;
-    font-size: 1.5rem;
-    font-weight: bold;
-    text-shadow: 0 0 10px rgba(76, 175, 80, 0.5);
-    border: 2px solid #4CAF50;
-    padding: 0.5rem 1rem;
-    border-radius: 5px;
-}
+        .logo {
+            color: #4CAF50;
+            font-size: 1.5rem;
+            font-weight: bold;
+            text-shadow: 0 0 10px rgba(76, 175, 80, 0.5);
+            border: 2px solid #4CAF50;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+        }
 
-.nav-menu {
-    display: flex;
-    list-style: none;
-    gap: 2rem;
-}
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
 
-.nav-link {
-    color: #e0e0e0;
-    text-decoration: none;
-    transition: all 0.3s;
-    padding: 0.5rem 1rem;
-    border: 1px solid #2a2a2a;
-    border-radius: 5px;
-}
+        .nav-link {
+            color: #e0e0e0;
+            text-decoration: none;
+            transition: all 0.3s;
+            padding: 0.5rem 1rem;
+            border: 1px solid #2a2a2a;
+            border-radius: 5px;
+        }
 
-.nav-link:hover {
-    color: #4CAF50;
-    border-color: #4CAF50;
-    box-shadow: 0 0 10px rgba(76, 175, 80, 0.3);
-}
+        .nav-link:hover {
+            color: #4CAF50;
+            border-color: #4CAF50;
+            box-shadow: 0 0 10px rgba(76, 175, 80, 0.3);
+        }
 
-.nav-link.active {
-    color: #0a0a0a;
-    background-color: #4CAF50;
-    border: 2px solid #4CAF50;
-}
+        .nav-link.active {
+            color: #0a0a0a;
+            background-color: #4CAF50;
+            border: 2px solid #4CAF50;
+        }
 
-.hamburger {
-    display: none;
-    flex-direction: column;
-    cursor: pointer;
-    padding: 0.5rem;
-    border: 2px solid #4CAF50;
-    border-radius: 5px;
-}
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            padding: 0.5rem;
+            border: 2px solid #4CAF50;
+            border-radius: 5px;
+        }
 
-.hamburger span {
-    width: 25px;
-    height: 3px;
-    background-color: #4CAF50;
-    margin: 3px 0;
-    transition: 0.3s;
-}
+        .hamburger span {
+            width: 25px;
+            height: 3px;
+            background-color: #4CAF50;
+            margin: 3px 0;
+            transition: 0.3s;
+        }
 
-.contact-hero {
-    background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
-    color: #e0e0e0;
-    padding: 6rem 2rem 3rem;
-    text-align: center;
-    margin-top: 60px;
-    border-bottom: 2px solid #4CAF50;
-}
+        .contact-hero {
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+            color: #e0e0e0;
+            padding: 6rem 2rem 3rem;
+            text-align: center;
+            margin-top: 60px;
+            border-bottom: 2px solid #4CAF50;
+        }
 
-.contact-hero h1 {
-    font-size: 2.5rem;
-    margin-bottom: 1rem;
-    text-shadow: 0 0 20px rgba(76, 175, 80, 0.5);
-    -webkit-text-stroke: 1px rgba(76, 175, 80, 0.3);
-    display: inline-block;
-    padding: 0.5rem 2rem;
-    border: 2px solid rgba(76, 175, 80, 0.5);
-    border-radius: 10px;
-}
+        .contact-hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            text-shadow: 0 0 20px rgba(76, 175, 80, 0.5);
+            -webkit-text-stroke: 1px rgba(76, 175, 80, 0.3);
+            display: inline-block;
+            padding: 0.5rem 2rem;
+            border: 2px solid rgba(76, 175, 80, 0.5);
+            border-radius: 10px;
+        }
 
-.contact-hero p {
-    font-size: 1.2rem;
-    opacity: 0.9;
-    color: #b0b0b0;
-    display: inline-block;
-    padding: 0.5rem 1.5rem;
-    border: 1px solid rgba(76, 175, 80, 0.3);
-    border-radius: 20px;
-}
+        .contact-hero p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            color: #b0b0b0;
+            display: inline-block;
+            padding: 0.5rem 1.5rem;
+            border: 1px solid rgba(76, 175, 80, 0.3);
+            border-radius: 20px;
+        }
 
-/* Contact Cards Section */
-.contact-cards-section {
-    padding: 4rem 2rem;
-    background-color: #0f0f0f;
-    border-bottom: 2px solid #2a2a2a;
-}
+        /* Contact Cards Section */
+        .contact-cards-section {
+            padding: 4rem 2rem;
+            background-color: #0f0f0f;
+            border-bottom: 2px solid #2a2a2a;
+        }
 
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-}
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
 
-.contact-cards-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
-}
+        .contact-cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
 
-.contact-card {
-    background-color: #1a1a1a;
-    padding: 3rem 2rem;
-    border-radius: 10px;
-    border: 2px solid #2a2a2a;
-    text-align: center;
-    transition: all 0.3s;
-    position: relative;
-    overflow: hidden;
-    cursor: pointer;
-}
+        .contact-card {
+            background-color: #1a1a1a;
+            padding: 3rem 2rem;
+            border-radius: 10px;
+            border: 2px solid #2a2a2a;
+            text-align: center;
+            transition: all 0.3s;
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+        }
 
-.contact-card::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(135deg, transparent, rgba(76, 175, 80, 0.1), transparent);
-    transform: translateX(-100%);
-    transition: transform 0.6s;
-}
+        .contact-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, transparent, rgba(76, 175, 80, 0.1), transparent);
+            transform: translateX(-100%);
+            transition: transform 0.6s;
+        }
 
-.contact-card:hover::before {
-    transform: translateX(100%);
-}
+        .contact-card:hover::before {
+            transform: translateX(100%);
+        }
 
-.contact-card:hover {
-    transform: translateY(-10px);
-    border-color: #4CAF50;
-    box-shadow: 0 10px 30px rgba(76, 175, 80, 0.3);
-}
+        .contact-card:hover {
+            transform: translateY(-10px);
+            border-color: #4CAF50;
+            box-shadow: 0 10px 30px rgba(76, 175, 80, 0.3);
+        }
 
-.contact-card[data-action="phone"]:hover {
-    background-color: rgba(76, 175, 80, 0.05);
-}
+        .contact-card[data-action="phone"]:hover {
+            background-color: rgba(76, 175, 80, 0.05);
+        }
 
-.contact-card[data-action="email"]:hover {
-    background-color: rgba(76, 175, 80, 0.05);
-}
+        .contact-card[data-action="email"]:hover {
+            background-color: rgba(76, 175, 80, 0.05);
+        }
 
-.contact-card[data-action="location"]:hover {
-    background-color: rgba(76, 175, 80, 0.05);
-}
+        .contact-card[data-action="location"]:hover {
+            background-color: rgba(76, 175, 80, 0.05);
+        }
 
-.card-icon {
-    font-size: 4rem;
-    margin-bottom: 1.5rem;
-    display: inline-block;
-    padding: 2rem;
-    border: 3px solid #4CAF50;
-    border-radius: 50%;
-    background-color: rgba(76, 175, 80, 0.1);
-    box-shadow: 
-        0 0 30px rgba(76, 175, 80, 0.3),
-        inset 0 0 20px rgba(76, 175, 80, 0.1);
-    animation: iconPulse 2s infinite;
-}
+        .card-icon {
+            font-size: 4rem;
+            margin-bottom: 1.5rem;
+            display: inline-block;
+            padding: 2rem;
+            border: 3px solid #4CAF50;
+            border-radius: 50%;
+            background-color: rgba(76, 175, 80, 0.1);
+            box-shadow:
+                0 0 30px rgba(76, 175, 80, 0.3),
+                inset 0 0 20px rgba(76, 175, 80, 0.1);
+            animation: iconPulse 2s infinite;
+        }
 
-@keyframes iconPulse {
-    0%, 100% { 
-        transform: scale(1); 
-        box-shadow: 0 0 30px rgba(76, 175, 80, 0.3), inset 0 0 20px rgba(76, 175, 80, 0.1);
-    }
-    50% { 
-        transform: scale(1.05); 
-        box-shadow: 0 0 40px rgba(76, 175, 80, 0.5), inset 0 0 25px rgba(76, 175, 80, 0.2);
-    }
-}
+        @keyframes iconPulse {
 
-.contact-card h3 {
-    color: #4CAF50;
-    font-size: 1.8rem;
-    margin-bottom: 1rem;
-    text-shadow: 0 0 10px rgba(76, 175, 80, 0.3);
-}
+            0%,
+            100% {
+                transform: scale(1);
+                box-shadow: 0 0 30px rgba(76, 175, 80, 0.3), inset 0 0 20px rgba(76, 175, 80, 0.1);
+            }
 
-.contact-card p {
-    color: #e0e0e0;
-    font-size: 1.2rem;
-    margin-bottom: 0.5rem;
-    font-weight: 500;
-}
+            50% {
+                transform: scale(1.05);
+                box-shadow: 0 0 40px rgba(76, 175, 80, 0.5), inset 0 0 25px rgba(76, 175, 80, 0.2);
+            }
+        }
 
-.card-subtitle {
-    color: #b0b0b0;
-    font-size: 1rem;
-    padding: 0.5rem 1rem;
-    border: 1px solid rgba(42, 42, 42, 0.5);
-    border-radius: 20px;
-    display: inline-block;
-    margin-top: 0.5rem;
-}
+        .contact-card h3 {
+            color: #4CAF50;
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            text-shadow: 0 0 10px rgba(76, 175, 80, 0.3);
+        }
 
-/* Map Section */
-.map-section {
-    padding: 4rem 2rem;
-    background-color: #0f0f0f;
-}
+        .contact-card p {
+            color: #e0e0e0;
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
 
-.map-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    background: #1a1a1a;
-    padding: 3rem;
-    border-radius: 10px;
-    border: 3px solid #2a2a2a;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.5);
-}
+        .card-subtitle {
+            color: #b0b0b0;
+            font-size: 1rem;
+            padding: 0.5rem 1rem;
+            border: 1px solid rgba(42, 42, 42, 0.5);
+            border-radius: 20px;
+            display: inline-block;
+            margin-top: 0.5rem;
+        }
 
-.map-container h2 {
-    color: #4CAF50;
-    font-size: 2.5rem;
-    margin-bottom: 2rem;
-    text-align: center;
-    text-shadow: 0 0 20px rgba(76, 175, 80, 0.5);
-    -webkit-text-stroke: 1px rgba(76, 175, 80, 0.2);
-    padding-bottom: 1.5rem;
-    border-bottom: 3px solid rgba(76, 175, 80, 0.3);
-}
+        /* Map Section */
+        .map-section {
+            padding: 4rem 2rem;
+            background-color: #0f0f0f;
+        }
 
-.map-wrapper {
-    width: 100%;
-    height: 500px;
-    border: 4px solid #4CAF50;
-    border-radius: 10px;
-    overflow: hidden;
-    box-shadow: 0 0 30px rgba(76, 175, 80, 0.4);
-    position: relative;
-    margin-bottom: 2rem;
-}
+        .map-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: #1a1a1a;
+            padding: 3rem;
+            border-radius: 10px;
+            border: 3px solid #2a2a2a;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
+        }
 
-.map-wrapper::before {
-    content: '';
-    position: absolute;
-    inset: -4px;
-    border-radius: 10px;
-    background: linear-gradient(45deg, #4CAF50, transparent, #4CAF50);
-    animation: rotate 4s linear infinite;
-    z-index: -1;
-}
+        .map-container h2 {
+            color: #4CAF50;
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            text-align: center;
+            text-shadow: 0 0 20px rgba(76, 175, 80, 0.5);
+            -webkit-text-stroke: 1px rgba(76, 175, 80, 0.2);
+            padding-bottom: 1.5rem;
+            border-bottom: 3px solid rgba(76, 175, 80, 0.3);
+        }
 
-@keyframes rotate {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
-}
+        .map-wrapper {
+            width: 100%;
+            height: 500px;
+            border: 4px solid #4CAF50;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 0 30px rgba(76, 175, 80, 0.4);
+            position: relative;
+            margin-bottom: 2rem;
+        }
 
-.map-wrapper iframe {
-    width: 100%;
-    height: 100%;
-    border: none;
-    filter: grayscale(20%) brightness(0.9);
-    transition: filter 0.3s;
-}
+        .map-wrapper::before {
+            content: '';
+            position: absolute;
+            inset: -4px;
+            border-radius: 10px;
+            background: linear-gradient(45deg, #4CAF50, transparent, #4CAF50);
+            animation: rotate 4s linear infinite;
+            z-index: -1;
+        }
 
-.map-wrapper:hover iframe {
-    filter: grayscale(0%) brightness(1);
-}
+        @keyframes rotate {
+            0% {
+                transform: rotate(0deg);
+            }
 
-.map-info {
-    text-align: center;
-    padding: 2rem;
-    background-color: #0f0f0f;
-    border-radius: 10px;
-    border: 2px solid #2a2a2a;
-}
+            100% {
+                transform: rotate(360deg);
+            }
+        }
 
-.map-info h3 {
-    color: #4CAF50;
-    margin-bottom: 1rem;
-    font-size: 1.8rem;
-    text-shadow: 0 0 10px rgba(76, 175, 80, 0.3);
-}
+        .map-wrapper iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+            filter: grayscale(20%) brightness(0.9);
+            transition: filter 0.3s;
+        }
 
-.map-info p {
-    color: #b0b0b0;
-    margin-bottom: 1.5rem;
-    line-height: 1.8;
-    font-size: 1.1rem;
-}
+        .map-wrapper:hover iframe {
+            filter: grayscale(0%) brightness(1);
+        }
 
-.office-hours {
-    margin: 2rem 0;
-    padding: 1.5rem;
-    background-color: #1a1a1a;
-    border-radius: 10px;
-    border: 2px solid rgba(76, 175, 80, 0.3);
-}
+        .map-info {
+            text-align: center;
+            padding: 2rem;
+            background-color: #0f0f0f;
+            border-radius: 10px;
+            border: 2px solid #2a2a2a;
+        }
 
-.office-hours h4 {
-    color: #4CAF50;
-    margin-bottom: 1rem;
-    font-size: 1.3rem;
-    text-shadow: 0 0 5px rgba(76, 175, 80, 0.3);
-}
+        .map-info h3 {
+            color: #4CAF50;
+            margin-bottom: 1rem;
+            font-size: 1.8rem;
+            text-shadow: 0 0 10px rgba(76, 175, 80, 0.3);
+        }
 
-.office-hours p {
-    color: #e0e0e0;
-    margin-bottom: 0.5rem;
-    font-size: 1rem;
-}
+        .map-info p {
+            color: #b0b0b0;
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+            font-size: 1.1rem;
+        }
 
-/* Social Links */
-.social-links {
-    display: flex;
-    gap: 1rem;
-    justify-content: center;
-    margin-top: 2rem;
-}
+        .office-hours {
+            margin: 2rem 0;
+            padding: 1.5rem;
+            background-color: #1a1a1a;
+            border-radius: 10px;
+            border: 2px solid rgba(76, 175, 80, 0.3);
+        }
 
-.social-link {
-    color: #4CAF50;
-    text-decoration: none;
-    padding: 0.8rem 1.5rem;
-    border: 2px solid #4CAF50;
-    border-radius: 5px;
-    transition: all 0.3s;
-    font-weight: bold;
-    position: relative;
-    overflow: hidden;
-}
+        .office-hours h4 {
+            color: #4CAF50;
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+            text-shadow: 0 0 5px rgba(76, 175, 80, 0.3);
+        }
 
-.social-link::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background-color: #4CAF50;
-    transition: left 0.3s;
-    z-index: -1;
-}
+        .office-hours p {
+            color: #e0e0e0;
+            margin-bottom: 0.5rem;
+            font-size: 1rem;
+        }
 
-.social-link:hover::before {
-    left: 0;
-}
+        /* Social Links */
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            margin-top: 2rem;
+        }
 
-.social-link:hover {
-    color: #0a0a0a;
-    box-shadow: 0 0 20px rgba(76, 175, 80, 0.5);
-    transform: scale(1.05);
-}
+        .social-link {
+            color: #4CAF50;
+            text-decoration: none;
+            padding: 0.8rem 1.5rem;
+            border: 2px solid #4CAF50;
+            border-radius: 5px;
+            transition: all 0.3s;
+            font-weight: bold;
+            position: relative;
+            overflow: hidden;
+        }
 
-.footer {
-    background-color: #0a0a0a;
-    color: #b0b0b0;
-    text-align: center;
-    padding: 2rem;
-    border-top: 2px solid #4CAF50;
-}
+        .social-link::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background-color: #4CAF50;
+            transition: left 0.3s;
+            z-index: -1;
+        }
 
-/* Responsive Design */
-@media (max-width: 768px) {
-    .nav-menu {
-        position: fixed;
-        left: -100%;
-        top: 70px;
-        flex-direction: column;
-        background-color: #0f0f0f;
-        width: 100%;
-        text-align: center;
-        transition: 0.3s;
-        padding: 2rem 0;
-        border-bottom: 2px solid #4CAF50;
-        border-left: 2px solid #4CAF50;
-        border-right: 2px solid #4CAF50;
-    }
+        .social-link:hover::before {
+            left: 0;
+        }
 
-    .nav-menu.active {
-        left: 0;
-    }
+        .social-link:hover {
+            color: #0a0a0a;
+            box-shadow: 0 0 20px rgba(76, 175, 80, 0.5);
+            transform: scale(1.05);
+        }
 
-    .hamburger {
-        display: flex;
-    }
+        .footer {
+            background-color: #0a0a0a;
+            color: #b0b0b0;
+            text-align: center;
+            padding: 2rem;
+            border-top: 2px solid #4CAF50;
+        }
 
-    .contact-hero h1 {
-        font-size: 2rem;
-    }
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-menu {
+                position: fixed;
+                left: -100%;
+                top: 70px;
+                flex-direction: column;
+                background-color: #0f0f0f;
+                width: 100%;
+                text-align: center;
+                transition: 0.3s;
+                padding: 2rem 0;
+                border-bottom: 2px solid #4CAF50;
+                border-left: 2px solid #4CAF50;
+                border-right: 2px solid #4CAF50;
+            }
 
-    .contact-cards-grid {
-        grid-template-columns: 1fr;
-    }
+            .nav-menu.active {
+                left: 0;
+            }
 
-    .card-icon {
-        font-size: 3rem;
-        padding: 1.5rem;
-    }
+            .hamburger {
+                display: flex;
+            }
 
-    .map-wrapper {
-        height: 350px;
-    }
+            .contact-hero h1 {
+                font-size: 2rem;
+            }
 
-    .map-container {
-        padding: 2rem 1.5rem;
-    }
-}
-     </style>
+            .contact-cards-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .card-icon {
+                font-size: 3rem;
+                padding: 1.5rem;
+            }
+
+            .map-wrapper {
+                height: 350px;
+            }
+
+            .map-container {
+                padding: 2rem 1.5rem;
+            }
+        }
+    </style>
 </head>
+
 <body>
     <nav class="navbar">
         <div class="nav-container">
@@ -471,20 +481,20 @@ body {
                 <div class="contact-card" data-action="phone">
                     <div class="card-icon">📞</div>
                     <h3>Get in Touch</h3>
-                    <p>+1 (555) 123-4567</p>
+                    <p>+233 (200) 720-509</p>
                     <p class="card-subtitle">Mon-Fri 9AM-6PM EST</p>
                 </div>
                 <div class="contact-card" data-action="email">
                     <div class="card-icon">📧</div>
                     <h3>Email</h3>
-                    <p>hello@qodeworx.com</p>
+                    <p>qodeworx@gmail.com</p>
                     <p class="card-subtitle">We reply within 24 hours</p>
                 </div>
                 <div class="contact-card" data-action="location">
                     <div class="card-icon">📍</div>
                     <h3>Location</h3>
-                    <p>123 Tech Street</p>
-                    <p class="card-subtitle">Digital City, DC 12345</p>
+                    <p>Omanye Aba Street</p>
+                    <p class="card-subtitle">Tema Community 25</p>
                 </div>
             </div>
         </div>
@@ -496,16 +506,15 @@ body {
                 <h2>Find Us Here</h2>
                 <div class="map-wrapper">
                     <!-- Replace the src with your actual Google Maps embed URL -->
-                    <iframe 
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3024.3752466076745!2d-74.00601688459395!3d40.71277517933019!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25a316636e4a7%3A0x7e0e0c4b5f5c4a5e!2sNew%20York%2C%20NY%2010007%2C%20USA!5e0!3m2!1sen!2sus!4v1635959040961!5m2!1sen!2sus"
-                        allowfullscreen=""
-                        loading="lazy"
-                        referrerpolicy="no-referrer-when-downgrade">
-                    </iframe>
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d248.11522063781982!2d0.0032735284684235286!3d5.735661838550856!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sgh!4v1752063012980!5m2!1sen!2sgh"
+                        width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"></iframe>
                 </div>
                 <div class="map-info">
                     <h3>Visit Our Office</h3>
-                    <p>We're located in the heart of Digital City. Drop by for a coffee and let's discuss your project in person!</p>
+                    <p>We're located in the heart of Digital City. Drop by for a coffee and let's discuss your project
+                        in person!</p>
                     <div class="office-hours">
                         <h4>Office Hours</h4>
                         <p>Monday - Friday: 9:00 AM - 6:00 PM EST</p>
@@ -526,120 +535,120 @@ body {
     </footer>
 
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
-    // Mobile menu toggle
-    const hamburger = document.querySelector('.hamburger');
-    const navMenu = document.querySelector('.nav-menu');
+        document.addEventListener('DOMContentLoaded', function () {
+            // Mobile menu toggle
+            const hamburger = document.querySelector('.hamburger');
+            const navMenu = document.querySelector('.nav-menu');
 
-    hamburger.addEventListener('click', function() {
-        navMenu.classList.toggle('active');
-        
-        const spans = hamburger.querySelectorAll('span');
-        spans[0].style.transform = navMenu.classList.contains('active') ? 'rotate(-45deg) translate(-5px, 6px)' : '';
-        spans[1].style.opacity = navMenu.classList.contains('active') ? '0' : '1';
-        spans[2].style.transform = navMenu.classList.contains('active') ? 'rotate(45deg) translate(-5px, -6px)' : '';
-    });
+            hamburger.addEventListener('click', function () {
+                navMenu.classList.toggle('active');
 
-    // Animate contact cards on load
-    const contactCards = document.querySelectorAll('.contact-card');
-    contactCards.forEach((card, index) => {
-        card.style.opacity = '0';
-        card.style.transform = 'translateY(30px)';
-        
-        setTimeout(() => {
-            card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-            card.style.opacity = '1';
-            card.style.transform = 'translateY(0)';
-        }, index * 150);
-    });
+                const spans = hamburger.querySelectorAll('span');
+                spans[0].style.transform = navMenu.classList.contains('active') ? 'rotate(-45deg) translate(-5px, 6px)' : '';
+                spans[1].style.opacity = navMenu.classList.contains('active') ? '0' : '1';
+                spans[2].style.transform = navMenu.classList.contains('active') ? 'rotate(45deg) translate(-5px, -6px)' : '';
+            });
 
-    // Make contact cards clickable
-    contactCards.forEach(card => {
-        card.addEventListener('click', function() {
-            const action = this.getAttribute('data-action');
-            
-            switch(action) {
-                case 'phone':
-                    window.location.href = 'tel:+15551234567';
-                    break;
-                case 'email':
-                    window.location.href = 'mailto:hello@qodeworx.com';
-                    break;
-                case 'location':
-                    // Smooth scroll to map
-                    document.querySelector('.map-section').scrollIntoView({ 
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                    break;
-            }
-        });
-    });
+            // Animate contact cards on load
+            const contactCards = document.querySelectorAll('.contact-card');
+            contactCards.forEach((card, index) => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(30px)';
 
-    // Animate map container on scroll
-    const observerOptions = {
-        threshold: 0.1,
-        rootMargin: '0px 0px -50px 0px'
-    };
-
-    const observer = new IntersectionObserver(function(entries) {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.style.opacity = '0';
-                entry.target.style.transform = 'translateY(30px)';
-                
                 setTimeout(() => {
-                    entry.target.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
-                    entry.target.style.opacity = '1';
-                    entry.target.style.transform = 'translateY(0)';
-                }, 100);
-                
-                observer.unobserve(entry.target);
+                    card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+                    card.style.opacity = '1';
+                    card.style.transform = 'translateY(0)';
+                }, index * 150);
+            });
+
+            // Make contact cards clickable
+            contactCards.forEach(card => {
+                card.addEventListener('click', function () {
+                    const action = this.getAttribute('data-action');
+
+                    switch (action) {
+                        case 'phone':
+                            window.location.href = 'tel:+15551234567';
+                            break;
+                        case 'email':
+                            window.location.href = 'mailto:hello@qodeworx.com';
+                            break;
+                        case 'location':
+                            // Smooth scroll to map
+                            document.querySelector('.map-section').scrollIntoView({
+                                behavior: 'smooth',
+                                block: 'start'
+                            });
+                            break;
+                    }
+                });
+            });
+
+            // Animate map container on scroll
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+
+            const observer = new IntersectionObserver(function (entries) {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '0';
+                        entry.target.style.transform = 'translateY(30px)';
+
+                        setTimeout(() => {
+                            entry.target.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
+                            entry.target.style.opacity = '1';
+                            entry.target.style.transform = 'translateY(0)';
+                        }, 100);
+
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+
+            // Observe map container
+            const mapContainer = document.querySelector('.map-container');
+            if (mapContainer) {
+                observer.observe(mapContainer);
             }
-        });
-    }, observerOptions);
 
-    // Observe map container
-    const mapContainer = document.querySelector('.map-container');
-    if (mapContainer) {
-        observer.observe(mapContainer);
-    }
+            // Add interactive hover effect to cards
+            contactCards.forEach(card => {
+                card.addEventListener('mouseenter', function () {
+                    const icon = this.querySelector('.card-icon');
+                    icon.style.transform = 'scale(1.1) rotate(5deg)';
+                });
 
-    // Add interactive hover effect to cards
-    contactCards.forEach(card => {
-        card.addEventListener('mouseenter', function() {
-            const icon = this.querySelector('.card-icon');
-            icon.style.transform = 'scale(1.1) rotate(5deg)';
-        });
-        
-        card.addEventListener('mouseleave', function() {
-            const icon = this.querySelector('.card-icon');
-            icon.style.transform = 'scale(1) rotate(0deg)';
-        });
-    });
+                card.addEventListener('mouseleave', function () {
+                    const icon = this.querySelector('.card-icon');
+                    icon.style.transform = 'scale(1) rotate(0deg)';
+                });
+            });
 
-    // Add copy functionality to email and phone on right-click
-    contactCards.forEach(card => {
-        card.addEventListener('contextmenu', function(e) {
-            e.preventDefault();
-            
-            const action = this.getAttribute('data-action');
-            let textToCopy = '';
-            
-            if (action === 'phone') {
-                textToCopy = '+15551234567';
-            } else if (action === 'email') {
-                textToCopy = 'hello@qodeworx.com';
-            } else if (action === 'location') {
-                textToCopy = '123 Tech Street, Digital City, DC 12345';
-            }
-            
-            if (textToCopy) {
-                navigator.clipboard.writeText(textToCopy).then(() => {
-                    // Create temporary tooltip
-                    const tooltip = document.createElement('div');
-                    tooltip.textContent = 'Copied!';
-                    tooltip.style.cssText = `
+            // Add copy functionality to email and phone on right-click
+            contactCards.forEach(card => {
+                card.addEventListener('contextmenu', function (e) {
+                    e.preventDefault();
+
+                    const action = this.getAttribute('data-action');
+                    let textToCopy = '';
+
+                    if (action === 'phone') {
+                        textToCopy = '+15551234567';
+                    } else if (action === 'email') {
+                        textToCopy = 'hello@qodeworx.com';
+                    } else if (action === 'location') {
+                        textToCopy = '123 Tech Street, Digital City, DC 12345';
+                    }
+
+                    if (textToCopy) {
+                        navigator.clipboard.writeText(textToCopy).then(() => {
+                            // Create temporary tooltip
+                            const tooltip = document.createElement('div');
+                            tooltip.textContent = 'Copied!';
+                            tooltip.style.cssText = `
                         position: absolute;
                         background: #4CAF50;
                         color: #0a0a0a;
@@ -650,32 +659,33 @@ body {
                         pointer-events: none;
                         animation: fadeOut 2s forwards;
                     `;
-                    
-                    // Position tooltip at cursor
-                    tooltip.style.left = e.pageX + 'px';
-                    tooltip.style.top = (e.pageY - 40) + 'px';
-                    
-                    document.body.appendChild(tooltip);
-                    
-                    setTimeout(() => {
-                        tooltip.remove();
-                    }, 2000);
-                });
-            }
-        });
-    });
-});
 
-// Add fadeOut animation for tooltip
-const style = document.createElement('style');
-style.textContent = `
+                            // Position tooltip at cursor
+                            tooltip.style.left = e.pageX + 'px';
+                            tooltip.style.top = (e.pageY - 40) + 'px';
+
+                            document.body.appendChild(tooltip);
+
+                            setTimeout(() => {
+                                tooltip.remove();
+                            }, 2000);
+                        });
+                    }
+                });
+            });
+        });
+
+        // Add fadeOut animation for tooltip
+        const style = document.createElement('style');
+        style.textContent = `
     @keyframes fadeOut {
         0% { opacity: 1; transform: translateY(0); }
         100% { opacity: 0; transform: translateY(-10px); }
     }
 `;
-document.head.appendChild(style);
+        document.head.appendChild(style);
 
     </script>
 </body>
+
 </html>
